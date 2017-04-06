@@ -20,7 +20,6 @@ public class MyModel extends AbstractTableModel{
 		return columnName.size();
 	}
 	
-@Override
 	public String getColumnName(int col) {
 
 		return (String) columnName.elementAt(col);
@@ -33,7 +32,13 @@ public class MyModel extends AbstractTableModel{
 	// JTable은 모델에 따라서 편집기능도 좌우된다
 	// row,col에 위치한 셀을 편집가능하게 한다
 	public boolean isCellEditable(int row, int col) {
-		return true;
+		boolean flag=false;
+		if(col==0){
+			flag=false;
+		}else{
+			flag=true;
+		}
+		return flag;
 	}
 	//각 셀의 변경값을 반영하는 메서드 오버라이드
 
